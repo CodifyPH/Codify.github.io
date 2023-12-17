@@ -74,7 +74,7 @@ input[type="checkbox"] {
     .burger-menu {
         display: block;
     }
-
+    
     .nav-links {
         display: none;
         flex-direction: column;
