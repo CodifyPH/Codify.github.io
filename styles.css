@@ -1,0 +1,441 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+    /* fixed so that the backgound will not move when scrolled down */
+    background-color: white;
+    background-image: linear-gradient(0deg, rgba(224, 224, 224, 0.03) 0%, rgba(224, 224, 224, 0.03) 12%,rgba(92, 92, 92, 0.03) 12%, rgba(92, 92, 92, 0.03) 100%),linear-gradient(90deg, rgba(110, 110, 110, 0.08) 0%, rgba(110, 110, 110, 0.08) 21%,rgba(27, 27, 27, 0.08) 21%, rgba(27, 27, 27, 0.08) 100%),linear-gradient(135deg, rgba(32, 32, 32, 0.03) 0%, rgba(32, 32, 32, 0.03) 53%,rgba(112, 112, 112, 0.03) 53%, rgba(112, 112, 112, 0.03) 100%),linear-gradient(0deg, rgba(210, 210, 210, 0.03) 0%, rgba(210, 210, 210, 0.03) 58%,rgba(200, 200, 200, 0.03) 58%, rgba(200, 200, 200, 0.03) 100%),linear-gradient(135deg, rgba(3, 3, 3, 0.09) 0%, rgba(3, 3, 3, 0.09) 71%,rgba(219, 219, 219, 0.09) 71%, rgba(219, 219, 219, 0.09) 100%),linear-gradient(45deg, rgba(119, 119, 119, 0.01) 0%, rgba(119, 119, 119, 0.01) 70%,rgba(189, 189, 189, 0.01) 70%, rgba(189, 189, 189, 0.01) 100%),linear-gradient(45deg, rgba(174, 174, 174, 0.01) 0%, rgba(174, 174, 174, 0.01) 61%,rgba(8, 8, 8, 0.01) 61%, rgba(8, 8, 8, 0.01) 100%),linear-gradient(90deg, rgb(246,166,90),rgb(38,37,37));  
+       /* for the background, I used ready made from https://www.gradientmagic.com/collection/simpleangular  */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Styles */
+nav {
+    background: linear-gradient(to right, rgba(101, 67, 33, 0.5), rgba(87, 117, 144, 0.5), rgba(52, 37, 37, 0.5), rgba(133, 94, 66, 0.5), rgba(100, 58, 70, 0.5));  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Dark shadow */
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+}
+
+
+.logo {
+    font-size: 1.5em;
+    transition: 0.3s ease;
+}
+
+.logo:hover{
+    transform: rotate(360deg);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white; /* Font color for the navigation links */
+    text-decoration: none; /* Remove underlines from links */
+}
+
+/* Burger Menu for Small Screens */
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+/* Hidden checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+
+    .burger-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1;
+    }
+
+        /* Show the navigation links when the checkbox is checked */
+        input[type="checkbox"]:checked + .burger-menu + .nav-links {
+            display: flex;
+        }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 0;
+        padding: 10px;
+        border-bottom: 1px solid #555;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    /* cards-positioning */
+
+    .cards-positioning{
+        display: flex;
+        align-items: center;
+        flex-direction: column; 
+    } 
+}
+
+/* Main Content Section Styles */
+
+.main-content{
+    margin: 0 auto;
+    max-width: 1500px; /* You can adjust the max-width based on your design */
+}
+
+.intro-logo {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+    background: rgba(173, 216, 230, 0.3); /* Light blue color with some transparency */
+    border-radius: 10px 40px;   
+}
+
+#intro-about {
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* you can edit the cards options here */
+
+.card {
+    perspective: 1000px;
+    width: 200px;
+    height: 300px;
+    
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* this is the starting of front card settings */
+
+.card .front1 {
+    background-image: url('images/front end logo.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    border-radius: 10px 40px;
+    height: 300px; /* Set the height of the card */
+    width: 220px;  /* Set the width of the card */
+}
+
+.card .front2 {
+    background-image: url('images/back-end-logo.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    border-radius: 10px 40px;
+    height: 300px; /* Set the height of the card */
+    width: 220px;  /* Set the width of the card */
+}
+
+.card .front3 {
+    background-image: url('images/full-stack-logo.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    border-radius: 10px 40px;
+    height: 300px; /* Set the height of the card */
+    width: 220px;  /* Set the width of the card */
+}
+
+.card .front4 {
+    background-image: url('images/preparations-logo.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    border-radius: 10px 40px;
+    height: 300px; /* Set the height of the card */
+    width: 220px;  /* Set the width of the card */
+}
+
+.card .front5 {
+    background-image: url('images/videos-logo.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    border-radius: 10px 40px;
+    height: 300px; /* Set the height of the card */
+    width: 220px;  /* Set the width of the card */
+}
+
+.card .front6 {
+    background-image: url('images/tipsandtricks-logo.jfif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: #fff;
+    border-radius: 10px 40px;
+    height: 300px; /* Set the height of the card */
+    width: 220px;  /* Set the width of the card */
+}
+
+/* this is the end of front card settings */
+
+
+.card .back {
+    background-color: #2ecc71;
+    color: #fff;
+    transform: rotateY(180deg);
+    border-radius: 10px 40px; 
+}
+
+.card .button {
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #3498db;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.back-title{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* cards alignment */
+
+.cards-positioning {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    margin-top: 70px;
+    background: linear-gradient(to right, rgba(101, 67, 33, 0.5), rgba(87, 117, 144, 0.5), rgba(52, 37, 37, 0.5), rgba(133, 94, 66, 0.5), rgba(100, 58, 70, 0.5));
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.column {
+    flex: 1;
+}
+
+.website-navigation ul,
+.social-media {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: small;
+}
+
+.website-navigation li {
+    margin-bottom: 10px;
+}
+
+.social-media a {
+    margin-bottom: 10px;
+}
+
+.social-media img {
+    width: 50px;
+    height: 50px;
+}
+
+/* this part is the CSS settigs for website HTML5 */
+
+.html5-header {
+    display: flex;
+    background: rgba(173, 216, 230, 0.3); 
+    margin: 20px;
+    border-radius: 10px 40px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+
+/* this is th settings for images inside the topics */
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .container img {
+        width: 100%;
+    }
+
+    .collapsible-image img {
+        max-width: 100%;
+    }
+
+    /* Add a zoom effect on hover for images */
+    .container img:hover,
+    .collapsible-image img:hover {
+        transform: scale(1.2);
+        transition: transform 0.3s ease;
+    }
+    
+    #intro-about {
+        font-size: small;
+    }
+}
+
+/* this part is the CSS settigs for website Preparation */
+
+.preparation-header {
+    display: flex;
+    background: rgba(173, 216, 230, 0.3); 
+    margin: 20px;
+    border-radius: 10px 40px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+
+.h2-prep {
+    margin-left: 10%;
+    color: white;
+}
+
+.text-editor {
+    margin-top: 3%;
+    margin-left: 10%;
+    color: white;
+}
+
+.attributes {
+    margin-top: 3%;
+    margin-left: 10%;
+    color: white;
+}
+
+.online-resources {
+    margin-top: 3%;
+    margin-left: 10%;
+    color: white;
+    margin-right: 30%;
+}
+
+/* this is the CSS setting for videos */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.video-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.video-box:hover {
+    transform: scale(1.05);
+}
+
+.video-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.video-box h3 {
+    padding: 10px;
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* this part is the CSS settigs for website About */
+

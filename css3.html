@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Website</title>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo"><a href="/home.html"><img src="images/codify-logo-ver1.jpg" alt="logo" height="70" width="70" style="border-radius: 15px 15px;" ></a></div>
+        <input type="checkbox" id="toggle-nav">
+        <label class="burger-menu" for="toggle-nav">&#9776;</label>
+        <ul class="nav-links">
+            <li><a href="/home.html">Home</a></li>
+            <li><a href="#">Language</a></li>
+            <li><a href="/preparation.html">Preparation</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="videos.html">Videos</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+<!-- <br> -->
+<div class="main-content"> 
+<Article>
+    <h1 >
+        CSS, or Cascading Style Sheets
+    </h1>
+        <p>
+            CSS, or Cascading Style Sheets, is like the "fashion" for web pages. 
+            It controls how things look, like colors, fonts, and spacing. You use 
+            CSS to make your website stylish and organized. It works with HTML, the 
+            language that structures your content. With CSS, you decide how your 
+            webpage should appear on different devices and even add cool animations. 
+            It's what makes your website visually appealing and user-friendly.
+        </p>
+</Article>
+
+<article>
+    <h2 class="header-blue">
+        Source code for macbook and windows
+    </h2>
+        <ul>
+            <li>
+                For windows: ctrl + shift + C
+            </li>
+            <li>
+                For Mac OS: Cmd + Opt + I
+            </li>
+                <img class="Content-images" src="Images/hoversource.jpg">
+                <img class="Content-images" src="Images/elementsource.jpg">
+        </ul>
+</article>
+
+<!-- <br>? -->
+
+<section>
+    <h2 class="header-blue">
+        To connect your CSS to your HTML, follow these simple steps:
+    </h2>
+        <ol>
+            <li>
+                Create a CSS File:
+                <p>
+                    Open your text editor (like Notepad, VS Code, or Sublime Text) and create a new file. 
+                    Save it with a ".css" extension. For example, name it styles.css. This is where your 
+                    CSS code will go.
+                    <br>
+                        styles.css: 
+                    <br>
+                        <img class="Content-images" src="Images/CSSconnect1.jpg" alt="">
+                </p>
+            </li>
+            <li>
+                Link CSS File to HTML:
+                <p>
+                    Open your HTML file (for example, index.html) in the same text editor. 
+                    Inside the (head) section, add a (link) tag to connect your HTML file with the 
+                    CSS file. Adjust the href attribute to point to your CSS file.
+                    <br>
+                        index.html:
+                    <br>
+                        <img class="Content-images" src="Images/cssconnect2.jpg" alt="">
+                </p>
+            </li>
+            <li>
+                Verify Connection:
+                <p>
+                    Save both files and open the HTML file in a web browser. You should see your 
+                    HTML content styled according to the rules specified in your CSS file.
+                </p>
+            </li>
+        </ol>
+</section>
+
+<!-- <br> -->
+
+<section>
+    <h2 class="header-blue">
+        CSS spacing
+    </h2>
+        <p>
+            Achieving spacing in CSS is more convenient and efficient compared to the somewhat
+            challenging and time-consuming task of editing (br) code. In this code, the focus 
+            is on the margin property for creating space around an element and the padding 
+            property for creating space within an element. These styles can be applied to 
+            HTML elements as needed for your spacing requirements.
+        </p>
+            <h3>
+                Two methods for handling spacing in CSS.
+            </h3>
+                <img class="Content-images" src="Images/Cssspacing.jpg" alt="">
+                <p>
+                    Margin 
+                    <br>
+                    <img class="Content-images" src="Images/cssspace.png" alt="">
+                </p>
+                <p>
+                    Padding
+                    <br>
+                    <img class="Content-images" src="Images/css.space.png" alt="">
+                </p>
+                <p> Please note that you can review the spacing on the website you are creating 
+                    by checking the source.</p>
+</section>
+
+<!-- <br> -->
+
+<section>
+    <h2 class="header-blue">
+        Selector
+    </h2>
+        <p>
+            These examples should provide a clear illustration of how each type of selector 
+            works. Remember that in practical use, you would apply these styles to 
+            corresponding HTML elements with the specified tags, classes, or IDs
+        </p>
+            <ol>
+                <li>
+                    Type (or tag) Selector: Selects all paragraphs and gives them a red color.
+                    <br> <img class="Content-images" src="Images/tagselector.jpg" alt="">
+                </li>
+                <li>
+                    Class Selector: Selects all elements with the class "highlight" and gives them a 
+                    yellow background.
+                    <br> <img class="Content-images" src="Images/classselector.jpg" alt="">
+                </li>
+                <li>ID Selector:Selects the element with the ID "main-heading" and makes its text 
+                    bold.
+                    <br> <img class="Content-images" src="Images/idselector.jpg" alt="">
+                </li>
+            </ol>
+</section>
+
+<!--  -->
+
+<section>
+    <h2 class="header-blue">
+        Inline CSS and Custom CSS
+    </h2>
+        <ol>
+            <li>
+                Inline CSS:
+            </li>
+                <ul>
+                    <li>Definition: Inline CSS is when you apply styles directly to an HTML element using the style attribute.</li>
+                    <li>Example: <br> <img src="Images/inlinecss.jpg" alt="">  </li>
+                    <li>Explanation: Styles are specified within the HTML tag itself. While it's convenient for small changes, it can make the HTML less clean and harder to maintain, especially for larger </li>
+                </ul>
+            <li>
+                Custom CSS:
+            </li>
+                <ul>
+                    <li>Definition: Custom CSS involves placing all your styles in a separate CSS file. You link this file to your HTML, keeping the styling separate from the HTML structure.</li>
+                    <li>Example: <br> <img class="Content-images" src="Images/customcss.jpg" alt=""></li>
+                    <li>Explanation: Styles are kept in a separate file (commonly with a .css extension), making the HTML cleaner and the styling reusable across multiple pages. It promotes better organization and maintenance of your website's code.</li>
+                </ul>
+                <p>
+                    In summary, inline CSS involves styling directly within HTML tags using the style attribute, while custom CSS involves keeping all your styles in a separate file and linking it to your HTML document. Custom CSS is generally preferred for larger projects as it promotes cleaner, more maintainable code.
+                </p>
+       </ol>
+
+
+
+        <br>
+        <p>
+
+        </p>
+</section>
+</div>
+
+<!--  -->
+
+<footer>
+    <h3>Contact US</h3>
+        <p>
+                baranggay 24, Rizal Street Legazpi City
+        </p>
+    <h3>Email us</h3>
+        <p>
+            Holycowramralph@gmail.com
+        </p>
+    <h3>Contact number</h3>
+        <p>
+            090909090909
+        </p>
+    
+        <aside>
+            <a href="https://www.facebook.com" target="https://www.facebook.com">
+            <img src="/Images.html/facebook.png" alt="Facebook Icon">
+            </a>
+    
+            <a href="https://www.instagram.com" target="https://www.instagram.com">
+            <img src="/Images.html/insta.png" alt="Instagram Icon">
+            </a>
+    
+            <a href="https://www.twitter.com" target="https://www.twitter.com">
+            <img src="/Images.html/x.png" alt="Twitter Icon">
+            </a>
+    
+            <a href="https://www.github.com" target="https://www.github.com">
+            <img src="Images.html/github.png" alt="gitnub" height="50">
+            </a>
+        </aside>
+    
+    <!-- <br> last part -->
+    
+    <aside>
+        <div>
+            <ul>       
+                <li><a href="#"> About us</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Career</a></li>
+            </ul>
+        </div>
+        <div>
+            <p> 
+                Copyright &copy; 2023 Codefy All Rights Reserved 
+            </p>
+        </div>
+    </aside>
+    </footer>
+    </body>
+    
+    
+    </html>
